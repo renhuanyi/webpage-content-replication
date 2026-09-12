@@ -8,4 +8,3 @@
 - Added bilingual documentation, explicit copyright and access boundaries, a public capability matrix, and installation instructions.
 - Added cross-agent compatibility guidance for Codex, Claude Code, WorkBuddy / WorkPuddy, and other Agent Skills-compatible runtimes.
 - Kept the lifecycle at `Observation`; no universal cross-site compatibility claim is made.
-

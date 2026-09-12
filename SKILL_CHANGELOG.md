@@ -9,4 +9,3 @@
 - Added bilingual public documentation, MIT licensing, lifecycle evidence, and installation guidance.
 - Added host-neutral compatibility guidance for Claude Code, WorkBuddy / WorkPuddy, and other Agent Skills-compatible runtimes.
 - Retained lifecycle state `Observation` and documented unverified capabilities.
-

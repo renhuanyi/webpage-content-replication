@@ -66,4 +66,3 @@ ZIP 只能作为已验收产物的可选封装，不能单独证明复刻完成�
 宿主没有浏览器控制或文件写入能力时，只能完成计划、可见内容整理或能力边界说明，不能声称完成截图、资源下载或离线 HTML 验收。
 
 不同宿主的安装位置、导入方式和工具映射见 [agent-compatibility.md](references/agent-compatibility.md)。
-

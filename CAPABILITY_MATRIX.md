@@ -12,4 +12,3 @@
 | Validate structure, resources, and browser rendering | Observation | Static and browser acceptance checks | A validator must use an independent manifest baseline |
 | Handle pagination and multiple collapsible regions | Unverified | No general regression suite | Must be verified per target before claiming completion |
 
-
