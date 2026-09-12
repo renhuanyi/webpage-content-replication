@@ -1,6 +1,8 @@
-# Webpage Content Replication Skill
+# 阿任 · 网页与文档复刻 Skill（Webpage Content Replication）
 
 用于复刻无法直接保存的网页与在线文档，服务于个人学习、离线阅读、知识整理和个人归档。
+
+作者 / Maintainer：阿任（Aren）· [github.com/renhuanyi](https://github.com/renhuanyi)
 
 This Skill preserves webpages and online documents that a user is authorized to access but cannot directly download or save in full. It is intended for personal study, offline reading, knowledge organization, and personal archiving.
 
@@ -63,4 +65,4 @@ The MIT License in this repository applies to the Skill instructions and support
 
 ## 当前状态 / Status
 
-Version `v0.3.0`, lifecycle `Observation`. Core workflows have succeeded on representative long and virtualized documents, but cross-site behavior, complex pagination, multi-section expansion, protected media, and every browser environment are not claimed as universally verified.
+Version `v0.4.0`, lifecycle `Observation`. Core workflows have succeeded on representative long and virtualized documents, but cross-site behavior, complex pagination, multi-section expansion, protected media, and every browser environment are not claimed as universally verified.

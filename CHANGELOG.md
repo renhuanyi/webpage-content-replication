@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.4.0 — 阿任 branded release
+
+- Added the 阿任 (Aren) brand to the Skill display name, description, README title, version file, and license holder.
+- Kept the Skill id, directory name, invocation name `$webpage-content-replication`, and repository URL unchanged so existing installs and shared links keep working.
+- Release artifacts are now `webpage-content-replication-v0.4.0.zip` with a published SHA-256; the v0.3.0 artifacts stay in `releases/` so the previous release link keeps working.
+- No change to the three delivery modes or to the acceptance gates.
+
 ## v0.3.0 — First public release
 
 - Published a privacy-safe distribution for personal learning and offline archiving.
