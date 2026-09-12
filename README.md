@@ -64,3 +64,4 @@ The MIT License in this repository applies to the Skill instructions and support
 ## 当前状态 / Status
 
 Version `v0.3.0`, lifecycle `Observation`. Core workflows have succeeded on representative long and virtualized documents, but cross-site behavior, complex pagination, multi-section expansion, protected media, and every browser environment are not claimed as universally verified.
+
