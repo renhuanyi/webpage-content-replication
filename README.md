@@ -11,7 +11,7 @@ This Skill preserves webpages and online documents that a user is authorized to 
 - 复刻普通长网页、折叠内容、分页内容、独立滚动区域和虚拟滚动页面。
 - 生成连续截图、完整 Markdown、可离线打开的 HTML，或三者组合。
 - 检查正文顺序、稳定 ID、页面末尾、图片资源闭包和离线可用性。
-- 在授权页面存在稳定文档对象时采用结构化采集，否则回退到 DOM、可见正文或截图。
+- 在授权页面存在稳定文档对象时，优先采用基于 Chrome DevTools Protocol（CDP）的页面内 JavaScript 结构化采集；宿主不支持 CDP 或目标边界不清时回退到 DOM、可见正文或截图。
 - 采用 Agent Skills 通用目录格式，可适配 Codex、Claude Code、WorkBuddy / WorkPuddy 及其他兼容 Agent。
 
 ## What it does
@@ -19,7 +19,7 @@ This Skill preserves webpages and online documents that a user is authorized to 
 - Handles long pages, collapsible sections, pagination, nested scroll containers, and virtualized lists.
 - Produces continuous screenshots, complete Markdown, offline HTML, or a combined delivery.
 - Verifies content order, stable IDs, end-of-page evidence, local media closure, and offline rendering.
-- Uses structured capture when an authorized page exposes a stable document object, with DOM, visible-content, and screenshot fallbacks.
+- Prefers CDP-driven in-page JavaScript structured capture when an authorized page exposes a stable document object, with DOM, visible-content, virtual-scroll, and screenshot fallbacks.
 - Uses the portable Agent Skills directory format so the same package can be imported by Codex, Claude Code, WorkBuddy / WorkPuddy, and other compatible agents.
 
 ## 三种模式 / Three modes
@@ -65,4 +65,4 @@ The MIT License in this repository applies to the Skill instructions and support
 
 ## 当前状态 / Status
 
-Version `v0.4.0`, lifecycle `Observation`. Core workflows have succeeded on representative long and virtualized documents, but cross-site behavior, complex pagination, multi-section expansion, protected media, and every browser environment are not claimed as universally verified.
+Version `v0.5.0`, lifecycle `Observation`. The preferred Codex + Chrome content-capture implementation is CDP-driven in-page JavaScript structured capture via `Runtime.evaluate`; cross-site behavior, complex pagination, multi-section expansion, protected media, and every browser environment are not claimed as universally verified.

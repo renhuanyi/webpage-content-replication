@@ -1,6 +1,6 @@
 interface:
   display_name: "阿任 · 网页与文档复刻"
   short_description: "阿任出品：把无法直接保存的网页复刻为截图、Markdown 或离线 HTML"
-  default_prompt: "使用 $webpage-content-replication 复刻我有权访问但无法直接完整保存的网页或在线文档，用于个人学习和离线归档；先判断交付模式，再完成对应验收。"
+  default_prompt: "使用 $webpage-content-replication 复刻我有权访问但无法直接完整保存的网页或在线文档，用于个人学习和离线归档；先判断交付模式；内容模式在目标文档对象稳定且授权边界明确时，优先使用 CDP 驱动的页面内 JavaScript 结构化采集（Runtime.evaluate），否则回退到 DOM、虚拟滚动、可见正文或截图；再完成对应验收。"
 policy:
   allow_implicit_invocation: true

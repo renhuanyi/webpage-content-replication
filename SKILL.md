@@ -23,7 +23,11 @@ ZIP 只能作为已验收产物的可选封装，不能单独证明复刻完成�
 
 1. 确认目标页面、标题、URL、当前登录状态以及用户保存该内容的权限边界。已有登录态可以直接使用；没有登录态不得绕过登录。
 2. 判断页面结构：普通长页面、折叠区、分页、独立滚动容器、虚拟列表，或多种结构组合。
-3. 按所选模式采集：视觉模式保存固定视口重叠截图；内容模式在页面已加载稳定目标文档对象且授权边界明确时，优先考虑浏览器结构化采集，否则保存可回读的 DOM、正文和实际资源引用；双交付同时执行两条路径。结构化采集时读取 [browser-structured-capture.md](references/browser-structured-capture.md)。
+3. 按所选模式采集：视觉模式保存固定视口重叠截图；内容模式在页面已加载稳定目标文档对象且授权边界明确时，优先考虑基于 Chrome DevTools Protocol（CDP）的页面内 JavaScript 结构化采集，否则保存可回读的 DOM、正文和实际资源引用；双交付同时执行两条路径。结构化采集时读取 [browser-structured-capture.md](references/browser-structured-capture.md)。
+
+### 内容模式的技术实现命名
+
+当前 Codex + Chrome 实现中，这条优先路径称为**CDP 驱动的页面内 JavaScript 结构化采集**：通过 Chrome DevTools Protocol 的 `Runtime.evaluate` 在已授权页面内执行受限 JavaScript，读取边界明确的目标文档对象（例如 block model / `dataJson`），再生成 Markdown 或离线 HTML。它不是 API 抓取，也不是只读取当前 DOM 文本；宿主不支持 CDP、目标对象边界不清或结构化结果不足时，必须回退到 DOM、虚拟滚动、可见正文或截图。
 4. 对虚拟滚动或动态页面使用稳定 item ID；没有稳定 ID 时组合使用 DOM 路径、正文哈希、顺序锚点和窗口重叠，并在验收记录中说明覆盖置信度。
 5. 比较重复 item 前，归一化空白、动态 fragment 和框架临时属性。正文、根 block 类型或有效资源引用出现真冲突时阻断生成，不能后写覆盖。
 6. 从合并正文的实际引用建立资源闭包。检查 `src`、`data-src`、`poster`、`srcset`、`source`、CSS 背景图和 iframe 等入口，不能只信页面资源清单。

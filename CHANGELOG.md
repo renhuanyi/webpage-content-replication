@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.5.0 — CDP-driven structured capture contract
+
+- Explicitly named the preferred content-capture implementation as CDP-driven in-page JavaScript structured capture via Chrome DevTools Protocol `Runtime.evaluate`.
+- Documented bounded target-object extraction, including block-model / `dataJson` style objects, and the DOM, virtual-scroll, visible-content, and screenshot fallbacks.
+- Kept the public package privacy-safe and the lifecycle at `Observation`; this source update does not create a new binary Release ZIP.
+
 ## v0.4.0 — 阿任 branded release
 
 - Added the 阿任 (Aren) brand to the Skill display name, description, README title, version file, and license holder.

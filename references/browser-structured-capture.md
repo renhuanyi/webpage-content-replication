@@ -1,6 +1,6 @@
 # 浏览器结构化采集
 
-适用于 `content-replica`，也适用于 `dual-delivery` 的内容层。当用户已在授权的浏览器页面中打开目标内容，且页面运行环境已经加载出稳定的目标文档对象时，优先考虑此路径。它是可选的内容采集方法，不是所有网站的强制要求，也不取代视觉截图。
+适用于 `content-replica`，也适用于 `dual-delivery` 的内容层。当用户已在授权的浏览器页面中打开目标内容，且页面运行环境已经加载出稳定的目标文档对象时，优先考虑**CDP 驱动的页面内 JavaScript 结构化采集**：在当前 Codex + Chrome 实现中，通过 Chrome DevTools Protocol 的 `Runtime.evaluate` 执行受限页面内 JavaScript，读取边界明确的目标文档对象（例如 block model / `dataJson`）。它是可选的内容采集方法，不是所有网站的强制要求，也不取代视觉截图；宿主不支持 CDP 或目标对象边界不清时，回退到 DOM、虚拟滚动、可见正文或截图。
 
 ## 1. 适用条件
 
